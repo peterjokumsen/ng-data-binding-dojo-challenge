@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { CounterService } from '../counter.service';
 import { CountDisplayComponent } from './count-display.component';
 
 describe('CountDisplayComponent', () => {
@@ -8,7 +9,8 @@ describe('CountDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountDisplayComponent ]
+      declarations: [ CountDisplayComponent ],
+      providers: [ CounterService ],
     })
     .compileComponents();
   }));

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { CounterService } from '../counter.service';
 import { CountAdjustComponent } from './count-adjust.component';
 
 describe('CountAdjustComponent', () => {
@@ -8,7 +9,8 @@ describe('CountAdjustComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountAdjustComponent ]
+      declarations: [ CountAdjustComponent ],
+      providers: [ CounterService ],
     })
     .compileComponents();
   }));

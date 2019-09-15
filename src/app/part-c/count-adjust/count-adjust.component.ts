@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CounterService } from '../counter.service';
+
 @Component({
   selector: 'app-count-adjust',
   templateUrl: './count-adjust.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountAdjustComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public svc: CounterService,
+  ) { }
 
   ngOnInit() {
   }
-
 }
