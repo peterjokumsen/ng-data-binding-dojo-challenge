@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class CountControllerComponent implements OnInit {
+  count = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  up() {
+    this.count++;
+  }
+
+  down() {
+    this.count--;
+  }
 }

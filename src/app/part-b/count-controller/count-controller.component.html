@@ -1,4 +1,4 @@
 <div class="container">
-  <app-count-adjust></app-count-adjust>
-  <app-count-display></app-count-display>
+  <app-count-adjust (increase)="up()" (decrease)="down()"></app-count-adjust>
+  <app-count-display [countValue]="count"></app-count-display>
 </div>
