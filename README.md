@@ -7,9 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The objective of this challenge is to provide a starting point for learning and playing around
 with data binding and shared data in Angular. There are three parts to this challenge:
 
-- Part A - Is focussed on learning data binding for one component
-- Part B - Is focussed on data binding, input and output between multiple components
-- Part C - Is focussed on data shared between multiple components with navigation
+- Part A - `./src/app/part-a` - Is focused on learning data binding for one component
+- Part B - `./src/app/part-b` - Is focused on data binding, input and output between multiple components
+- Part C - `./src/app/part-c` - Is focused on data shared between multiple components with navigation
 
 ## Requirements
 
@@ -26,6 +26,8 @@ The requirement for all three parts is the same:
 - You should not need to add additional components.
 
 ## Development server
+
+To start, run `npm install` to get all the required node modules for the project.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically
 reload if you change any of the source files.
