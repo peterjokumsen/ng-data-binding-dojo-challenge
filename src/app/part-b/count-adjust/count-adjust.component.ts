@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-count-adjust',
   templateUrl: './count-adjust.component.html',
   styles: []
 })
-export class CountAdjustComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CountAdjustComponent {
+  count = 0;
 }

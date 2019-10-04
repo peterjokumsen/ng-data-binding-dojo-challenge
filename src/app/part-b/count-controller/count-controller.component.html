@@ -1,4 +1,4 @@
 <div class="container">
-  <app-count-adjust></app-count-adjust>
-  <app-count-display></app-count-display>
+  <app-count-adjust #adjust></app-count-adjust>
+  <app-count-display [count]="adjust.count"></app-count-display>
 </div>

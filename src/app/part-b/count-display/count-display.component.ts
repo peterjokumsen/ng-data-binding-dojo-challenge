@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-count-display',
   templateUrl: './count-display.component.html',
   styles: []
 })
-export class CountDisplayComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CountDisplayComponent {
+  @Input() count = 0;
 }
