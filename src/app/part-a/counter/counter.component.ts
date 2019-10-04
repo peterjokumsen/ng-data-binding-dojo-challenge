@@ -10,17 +10,13 @@ export class CounterComponent implements OnInit {
   constructor() { }
 
   adjustCount(inc: boolean) {
-    if (this.count !== 0)
-
-
     if (inc) {
-      this.count++;
+      this.count += 1;
     } else {
-      this.count--;
+      this.count = Math.max(this.count - 1, 0);
     }
   }
 
   ngOnInit() {
   }
-
 }

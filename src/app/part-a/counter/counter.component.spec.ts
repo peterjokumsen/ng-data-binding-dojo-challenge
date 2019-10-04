@@ -1,42 +1,71 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { CounterComponent } from './counter.component';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
+  let counterElement: HTMLElement;
+  let upButton: HTMLButtonElement;
+  let downButton: HTMLButtonElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CounterComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    counterElement = fixture.nativeElement.querySelector('.counter');
+    upButton = fixture.nativeElement.querySelector('.btn-group .up');
+    downButton = fixture.nativeElement.querySelector('.btn-group .down');
   });
 
-  it('should create', () => {
+  it('should create and display "0"', () => {
     expect(component).toBeTruthy();
+    expect(counterElement.innerHTML).toEqual('0');
   });
 
-  it('should increment', () => {
-    component.count = 5;
-    component.adjustCount(true);
-    expect(component.count).toEqual(6);
+
+  describe('clicking the + icon', () => {
+    it('should increment', () => {
+      component.count = 2;
+      upButton.click();
+
+      fixture.detectChanges();
+
+      expect(counterElement.innerHTML).toEqual('3');
+    });
   });
 
   it('should decrement', () => {
-    component.count = 5;
-    component.adjustCount(false);
-    expect(component.count).toEqual(4);
+    component.count = 2;
+    downButton.click();
+
+    fixture.detectChanges();
+
+    expect(counterElement.innerHTML).toEqual('1');
+  });
+
+  it('should not go into negative', () => {
+    component.count = -1;
+    downButton.click();
+
+    fixture.detectChanges();
+
+    expect(counterElement.innerHTML).toEqual('0');
   });
 
   it('should not go into negative', () => {
     component.count = 0;
-    component.adjustCount(false);
-    expect(component.count).toEqual(0);
+    upButton.click();
+
+    fixture.detectChanges();
+
+    expect(counterElement.innerHTML).toEqual('1');
   });
 });
