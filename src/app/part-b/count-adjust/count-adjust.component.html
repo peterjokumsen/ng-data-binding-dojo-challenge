@@ -4,7 +4,7 @@
   aria-label="Adjust counter toolbar"
 >
   <div class="btn-group" role="group" aria-label="Button group">
-    <button type="button" class="btn btn-secondary" (click)="count = count + 1">+</button>
-    <button type="button" class="btn btn-secondary" (click)="count = count - 1">-</button>
+    <button type="button" class="btn btn-secondary" (click)="subject.next(false)">-</button>
+    <button type="button" class="btn btn-secondary" (click)="subject.next(true)">+</button>
   </div>
 </div>

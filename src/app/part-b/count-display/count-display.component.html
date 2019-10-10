@@ -1,3 +1,4 @@
 <div class="row justify-content-center">
-  <input class="counter" (keyup)="updateVal($event)" value="{{ count }}" />
+  <input class="counter" (keyup)="updateVal($event)" value="{{ count$ | async }}" />
+  <p>{{ bloop }}</p>
 </div>

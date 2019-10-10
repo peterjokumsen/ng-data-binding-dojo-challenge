@@ -1,3 +1,5 @@
+import { Subject } from 'rxjs';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './count-adjust.component.html',
   styles: []
 })
-export class CountAdjustComponent implements OnInit {
-  count = 0;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CountAdjustComponent {
+  subject = new Subject<boolean>();
 }
