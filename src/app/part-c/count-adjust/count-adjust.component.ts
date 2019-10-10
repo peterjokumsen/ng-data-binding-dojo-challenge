@@ -1,3 +1,5 @@
+import { CounterService } from 'src/app/services/counter.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class CountAdjustComponent implements OnInit {
+  key = 'keyC';
 
-  constructor() { }
+  constructor(protected counterSvc: CounterService) { }
 
   ngOnInit() {
+    this.counterSvc.counterDict[this.key] = this.counterSvc.counterDict[this.key] || 0;
   }
 
 }

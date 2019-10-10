@@ -1,9 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
-    <span class="counter">0</span>
+    <span class="counter">{{ counterSvc.counterDict[key] }}</span>
   </div>
 
-  <div class="btn-toolbar row justify-content-center" role="toolbar" aria-label="Navigate toolbar">
-    <button type="button" class="btn btn-primary" routerLink="/part-c/adjust">Back</button>
+  <div
+    class="btn-toolbar row justify-content-center"
+    role="toolbar"
+    aria-label="Navigate toolbar"
+  >
+    <button type="button" class="btn btn-primary" routerLink="/part-c/adjust">
+      Back
+    </button>
   </div>
 </div>

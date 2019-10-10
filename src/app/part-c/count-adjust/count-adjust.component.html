@@ -5,12 +5,30 @@
     aria-label="Adjust counter toolbar"
   >
     <div class="btn-group" role="group" aria-label="Button group">
-      <button type="button" class="btn btn-secondary">+</button>
-      <button type="button" class="btn btn-secondary">-</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="counterSvc.counterDict[key] = counterSvc.counterDict[key] - 1"
+      >
+        -
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="counterSvc.counterDict[key] = counterSvc.counterDict[key] + 1"
+      >
+        +
+      </button>
     </div>
   </div>
 
-  <div class="btn-toolbar row justify-content-center" role="toolbar" aria-label="Navigate toolbar">
-    <button type="button" class="btn btn-primary" routerLink="/part-c/display">Next</button>
+  <div
+    class="btn-toolbar row justify-content-center"
+    role="toolbar"
+    aria-label="Navigate toolbar"
+  >
+    <button type="button" class="btn btn-primary" routerLink="/part-c/display">
+      Next
+    </button>
   </div>
 </div>

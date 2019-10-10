@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-count-display',
@@ -13,8 +13,8 @@ export class CountDisplayComponent implements OnInit {
   ngOnInit() {
   }
 
-  updateVal(val: any){
-    console.log(val);
+  updateVal(val: KeyboardEvent) {
+    console.log({ value: +(val.key) });
+    this.count = +(val.key) || 0;
   }
-
 }
