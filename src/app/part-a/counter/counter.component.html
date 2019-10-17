@@ -5,12 +5,12 @@
     aria-label="Adjust counter toolbar"
   >
     <div class="btn-group" role="group" aria-label="Button group">
-      <button type="button" class="btn btn-secondary minusButton">-</button>
-      <button type="button" class="btn btn-secondary plusButton">+</button>
+      <button type="button" class="btn btn-secondary minusButton" (click)="decrease()">-</button>
+      <button type="button" class="btn btn-secondary plusButton" (click)="increase()">+</button>
     </div>
   </div>
 
   <div class="row justify-content-center">
-    <span class="counter">0</span>
+    <span class="counter">{{ counter }}</span>
   </div>
 </div>
