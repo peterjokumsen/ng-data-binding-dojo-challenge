@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-count-display',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class CountDisplayComponent {
+  @Input()
   counter = 0;
 }

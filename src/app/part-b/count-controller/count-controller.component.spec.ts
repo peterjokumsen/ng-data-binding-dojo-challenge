@@ -7,21 +7,38 @@ import { CountControllerComponent } from './count-controller.component';
 describe('CountControllerComponent', () => {
   let component: CountControllerComponent;
   let fixture: ComponentFixture<CountControllerComponent>;
+  let controllerElement: HTMLElement;
+  let displayCounterSpan: HTMLSpanElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CountControllerComponent, CountAdjustComponent, CountDisplayComponent ],
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CountControllerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    controllerElement = fixture.nativeElement;
+    displayCounterSpan = controllerElement.querySelector('.counter');
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('adjust component + button', () => {
+    it('should increment display component counter element', () => {
+      const button: HTMLButtonElement = controllerElement.querySelector('.btn.plus');
+
+      button.click();
+      fixture.detectChanges();
+
+      expect(displayCounterSpan.textContent).toEqual('1');
+    });
+  });
+
+  // describe('', () => {});
 });
