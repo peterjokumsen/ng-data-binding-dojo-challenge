@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { CounterComponent } from './counter.component';
 
 describe('CounterComponent', () => {
@@ -7,9 +8,9 @@ describe('CounterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [CounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,5 +21,16 @@ describe('CounterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('plus button should increase counter element text', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const plusButton: HTMLButtonElement = bannerElement.querySelector('.plusButton');
+    const counter: HTMLSpanElement = bannerElement.querySelector('.counter');
+
+    plusButton.click();
+    fixture.detectChanges();
+
+    expect(counter.textContent).toEqual('1');
   });
 });
