@@ -12,12 +12,7 @@ export class CounterComponent implements OnInit {
   ngOnInit() {
   }
 
-  increase() {
-    this.counter++;
+  adjust(amount: -1 | 1) {
+    this.counter += amount;
   }
-
-  decrease() {
-    this.counter--;
-  }
-
 }

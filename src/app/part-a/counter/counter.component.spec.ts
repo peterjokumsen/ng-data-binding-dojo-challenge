@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CounterComponent } from './counter.component';
 
 describe('CounterComponent', () => {
@@ -11,8 +10,7 @@ describe('CounterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CounterComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,23 +27,29 @@ describe('CounterComponent', () => {
   });
 
   describe('Plus button', () => {
+    let button: HTMLButtonElement;
+    beforeEach(() => {
+      button = nativeElement.querySelector('.plusButton');
+    });
+
     it('should increase counter element text', () => {
-      const plusButton: HTMLButtonElement = nativeElement.querySelector('.plusButton');
+      button.click();
 
-      plusButton.click();
       fixture.detectChanges();
-
       expect(counter.textContent).toEqual('1');
     });
   });
 
   describe('Minus button', () => {
+    let button: HTMLButtonElement;
+    beforeEach(() => {
+      button = nativeElement.querySelector('.minusButton');
+    });
+
     it('should decrease counter element text', () => {
-      const minusButton: HTMLButtonElement = nativeElement.querySelector('.minusButton');
+      button.click();
 
-      minusButton.click();
       fixture.detectChanges();
-
       expect(counter.textContent).toEqual('-1');
     });
   });
